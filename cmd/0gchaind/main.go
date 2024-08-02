@@ -11,9 +11,7 @@ import (
 )
 
 func main() {
-	fmt.Println("main")
 	chaincfg.SetSDKConfig().Seal()
-	fmt.Println("main2")
 	rootCmd := NewRootCmd()
 	if err := svrcmd.Execute(rootCmd, chaincfg.EnvPrefix, chaincfg.DefaultNodeHome); err != nil {
 		switch e := err.(type) {
@@ -25,5 +23,4 @@ func main() {
 			os.Exit(1)
 		}
 	}
-	fmt.Println("main3")
 }

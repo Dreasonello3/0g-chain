@@ -42,7 +42,6 @@ func customKeyringOptions() keyring.Option {
 
 // NewRootCmd creates a new root command for the 0g-chain blockchain.
 func NewRootCmd() *cobra.Command {
-	fmt.Println("NewRootCmd")
 	encodingConfig := app.MakeEncodingConfig()
 	initClientCtx := client.Context{}.
 		WithCodec(encodingConfig.Marshaler).
@@ -88,7 +87,6 @@ func NewRootCmd() *cobra.Command {
 	}
 
 	addSubCmds(rootCmd, encodingConfig, chaincfg.DefaultNodeHome)
-	fmt.Println("NewRootCmd2")
 	return rootCmd
 }
 
